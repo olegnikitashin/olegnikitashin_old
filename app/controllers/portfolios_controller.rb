@@ -9,13 +9,14 @@ class PortfoliosController < ApplicationController
 
   def new
     @portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build }
   end
 
   def create
     @portfolio_item = Portfolio.new portfolio_item_params
     if @portfolio_item.save
       flash[:success] = 'Portfolio was created successfully'
-      redirect_to @portfolio_item
+      redirect_to portfolio_show_path(@portfolio_item)
     else
       flash.now[:error] = 'Portfolio creation failed'
       render :new
@@ -49,6 +50,7 @@ class PortfoliosController < ApplicationController
 
   def portfolio_item_params
     params.require(:portfolio).permit(:title, :subtitle, :body,
-                                      :main_image, :thumb_image)
+                                      :main_image, :thumb_image,
+                                      technologies_attributes: [:name, :id, :_destroy])
   end
 end
