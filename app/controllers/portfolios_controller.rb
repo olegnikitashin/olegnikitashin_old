@@ -15,10 +15,10 @@ class PortfoliosController < ApplicationController
   def create
     @portfolio_item = Portfolio.new portfolio_item_params
     if @portfolio_item.save
-      flash[:success] = 'Portfolio was created successfully'
+      flash[:notice] = 'Portfolio was created successfully'
       redirect_to portfolio_show_path(@portfolio_item)
     else
-      flash.now[:error] = 'Portfolio creation failed'
+      flash.now[:alert] = 'Portfolio creation failed'
       render :new
     end
   end
@@ -27,17 +27,17 @@ class PortfoliosController < ApplicationController
 
   def update
     if @portfolio_item.update portfolio_item_params
-      flash[:success] = 'Portfolio was updated successfully'
+      flash[:notice] = 'Portfolio was updated successfully'
       redirect_to @portfolio_item
     else
-      flash.now[:error] = 'Portfolio update failed'
+      flash.now[:alert] = 'Portfolio update failed'
       render :edit
     end
   end
 
   def destroy
     if @portfolio_item.destroy
-      flash[:success] = 'Portfolio was deleted successfully'
+      flash[:notice] = 'Portfolio was deleted successfully'
       redirect_to portfolios_path
     end
   end
