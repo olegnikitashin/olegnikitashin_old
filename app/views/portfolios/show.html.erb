@@ -3,4 +3,9 @@
 <%= @portfolio_item.title %>
 <%= @portfolio_item.subtitle %>
 <%= @portfolio_item.body %>
+<h2>Technologies used:</h2>
+<% @portfolio_item.technologies.each do |technology| %>
+  <%= technology.name %>
+    <br>
+<% end %>
 <%= link_to 'Portfolios', portfolios_path %>
