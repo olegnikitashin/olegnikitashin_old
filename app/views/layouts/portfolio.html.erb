@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<%= render 'shared/nav', location: 'top' %>
 <% if session[:source] %>
     <p>Thank for visiting me from <%= session[:source] %></p>
 <% end %>
