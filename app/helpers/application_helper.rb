@@ -19,4 +19,8 @@ module ApplicationHelper
       content_tag(:p, greeting, class: 'source-greeting')
     end
   end
+
+  def copyright
+    "&copy; #{Time.now.year} | <b>Oleg Nikitashin</b>".html_safe
+  end
 end
