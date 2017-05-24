@@ -12,8 +12,8 @@ puts 'Topics added!'
 
 10.times do
   Blog.create!(
-    title: Faker::Lorem.sentence(3),
-    body: Faker::Lorem.paragraph(2),
+    title: Faker::Lorem.sentence(5),
+    body: Faker::Lorem.paragraph(10),
     topic_id: Topic.last.id
   )
 end

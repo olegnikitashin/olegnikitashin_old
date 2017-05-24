@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def login_helper(klass)
+  def login_helper(klass = '')
     if current_user.is_a?(GuestUser)
       (link_to 'Log In', new_user_session_path, class: klass) +
           ' '.html_safe +
@@ -13,7 +13,7 @@ module ApplicationHelper
     content_tag(:div, "Hi! I'm a paragraph tag!", class: 'my-special')
   end
 
-  def source_helper(layout_name)
+  def source_helper(layout_name = '')
     if session[:source]
       greeting = "Thanks for visiting me from #{session[:source]} and you're on the #{layout_name} page!"
       content_tag(:p, greeting, class: 'source-greeting')
