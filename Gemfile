@@ -58,3 +58,5 @@ gem 'friendly_id'
 gem 'devise'
 gem 'bootstrap'
 gem 'petergate'
+gem "font-awesome-rails"
+gem 'kaminari'

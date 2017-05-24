@@ -4,18 +4,16 @@ class BlogsController < ApplicationController
   access all: [:show, :index], user: { except: [:new, :create, :update, :edit, :destroy, :toggle_status] }, site_admin: :all
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.page(params[:page]).per(5)
   end
 
-  def show;
-  end
+  def show; end
 
   def new
     @blog = Blog.new
   end
 
-  def edit;
-  end
+  def edit; end
 
   def create
     @blog = Blog.new(blog_params)
