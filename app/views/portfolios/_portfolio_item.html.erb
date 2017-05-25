@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" data-id="<%= portfolio_item.id %>">
   <%= link_to portfolio_show_path(portfolio_item) do %>
     <%= image_tag portfolio_item.thumb_image if portfolio_item.thumb_image %>
   <% end %>

@@ -10,6 +10,7 @@ class Portfolio < ApplicationRecord
 
   scope :ruby_on_rails, -> { where(subtitle: 'Ruby On Rails') }
   scope :vue, -> { where(subtitle: 'VueJS') }
+  scope :by_position, -> {}
 
   private
 
