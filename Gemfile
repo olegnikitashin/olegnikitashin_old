@@ -60,3 +60,4 @@ gem 'bootstrap'
 gem 'petergate'
 gem "font-awesome-rails"
 gem 'kaminari'
+gem 'jquery-ui-rails'
