@@ -25,7 +25,8 @@ class PortfoliosController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     if @portfolio_item.update portfolio_item_params

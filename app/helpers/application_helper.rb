@@ -3,7 +3,7 @@ module ApplicationHelper
     if current_user.is_a?(GuestUser)
       (link_to 'Log In', new_user_session_path, class: klass) +
           ' '.html_safe +
-      (link_to 'Register', new_user_registration_path, class: klass)
+          (link_to 'Register', new_user_registration_path, class: klass)
     else
       link_to 'Log Out', destroy_user_session_path, method: :delete, class: klass
     end
@@ -24,7 +24,40 @@ module ApplicationHelper
     "&copy; #{Time.now.year} | <b>Oleg Nikitashin</b> All rights reserved".html_safe
   end
 
-  def active_class(link_path)
-    current_page?(link_path) ? "active" : ""
+  def active?(link_path)
+    'active' if current_page? link_path
+  end
+
+  def nav_items
+    [
+        {
+            url:   root_path,
+            title: 'Home'
+        },
+        {
+            url:   about_me_path,
+            title: 'About Me'
+        },
+        {
+            url:   contact_path,
+            title: 'Contact'
+        },
+        {
+            url:   blogs_path,
+            title: 'Blog'
+        },
+        {
+            url:   portfolios_path,
+            title: 'Portfolio'
+        }
+    ]
+  end
+
+  def nav_helper(klass, tag_type)
+    nav_links = ''
+    nav_items.each do |item|
+      nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{klass} #{active?(item[:url])}'>#{item[:title]}</a></#{tag_type}>"
+    end
+    nav_links.html_safe
   end
 end

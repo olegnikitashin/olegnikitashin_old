@@ -1,14 +1,23 @@
 <%= simple_form_for(@portfolio_item, html: { class: 'form-horizontal' }) do |f| %>
-    <%= f.input :title %>
-    <%= f.input :subtitle %>
-    <%= f.input :body %>
-    <h3>Technologies:</h3>
-    <ul>
-      <%= f.simple_fields_for :technologies do |t| %>
-        <li>
-          <%= t.input :name %>
-        </li>
-      <% end %>
-    </ul>
-    <%= f.button :submit %>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Portfolio Content:</h3>
+        <%= f.input :title %>
+        <%= f.input :subtitle %>
+        <%= f.input :body, as: :text, input_html: { rows: 10 } %>
+      </div>
+      <div class="col-md-6">
+        <h3>Technologies Used:</h3>
+        <div class="technologies">
+          <%= f.simple_fields_for :technologies do |t| %>
+              <div>
+                <%= t.input :name %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <%= f.button :submit, 'Save', class: 'btn btn-primary btn-block' %>
+      </div>
+    </div>
 <% end %>
