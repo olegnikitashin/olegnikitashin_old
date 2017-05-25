@@ -3,20 +3,25 @@
 <head>
   <title><%= @page_title %></title>
   <%= csrf_meta_tags %>
-
-  <meta name="keywords" content="<%= @seo_keywords %>" />
-
-  <%= stylesheet_link_tag    'blog', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <meta charset="utf-8">
+  <meta name="keywords" content="<%= @seo_keywords %>"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <%= stylesheet_link_tag 'blog', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
-  <%= source_helper %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <%= render 'shared/blog_nav' %>
+  <%= render 'shared/blog_header' %>
 
-  <%= yield %>
-  <%= render 'shared/nav', location: 'bottom' %>
-  <%= login_helper %>
+  <div class="container">
+    <div class="row">
+      <%= yield %>
+      <%= render 'shared/blog_sidebar' %>
+    </div>
+  </div>
+
+  <%= render 'shared/blog_footer' %>
+  <%= source_helper('blog') %>
 </body>
 </html>
