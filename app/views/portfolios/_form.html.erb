@@ -1,9 +1,15 @@
-<%= simple_form_for(@portfolio_item, html: { class: 'form-horizontal' }) do |f| %>
+<%= simple_form_for(@portfolio_item, html: { multipart: true, class: 'form-horizontal' }) do |f| %>
     <div class="row">
       <div class="col-md-6">
         <h3>Portfolio Content:</h3>
         <%= f.input :title %>
         <%= f.input :subtitle %>
+        <label class="btn btn-primary">
+          Upload a thumb image file <%= f.input :thumb_image, as: :file, label: false, input_html: { style: 'display: none;' } %>
+        </label>
+        <label class="btn btn-primary">
+          Upload a main image file <%= f.input :main_image, as: :file, label: false, input_html: { hidden: true } %>
+        </label>
         <%= f.input :body, as: :text, input_html: { rows: 10 } %>
       </div>
       <div class="col-md-6">

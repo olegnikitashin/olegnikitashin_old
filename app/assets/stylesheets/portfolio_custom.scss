@@ -1,7 +1,10 @@
-.portfolio-form {
-  padding: 20px;
+.portfolio-container {
+  padding-top: 30px;
   ul {
     list-style-type: none;
 
+  }
+  .portfolio_thumb_image, .portfolio_main_image {
+    margin-bottom: 0;
   }
 }

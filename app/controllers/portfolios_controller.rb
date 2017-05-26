@@ -30,7 +30,7 @@ class PortfoliosController < ApplicationController
   def update
     if @portfolio_item.update portfolio_item_params
       flash[:notice] = 'Portfolio was updated successfully'
-      redirect_to @portfolio_item
+      redirect_to portfolio_show_path(@portfolio_item)
     else
       flash.now[:alert] = 'Portfolio update failed'
       render :edit
