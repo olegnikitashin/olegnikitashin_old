@@ -52,10 +52,11 @@ class BlogsController < ApplicationController
   def toggle_status
     if @blog.draft?
       @blog.published!
+      flash[:notice] = 'Blog is published!'
     elsif @blog.published?
       @blog.draft!
+      flash[:notice] = 'Blog is in draft mode!'
     end
-    flash[:success] = 'Status has been updated'
     redirect_to blogs_path
   end
 

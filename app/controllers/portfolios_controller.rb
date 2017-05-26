@@ -7,11 +7,11 @@ class PortfoliosController < ApplicationController
     @portfolio_items = Portfolio.by_position
   end
 
-  def show; end
+  def show;
+  end
 
   def new
     @portfolio_item = Portfolio.new
-    3.times { @portfolio_item.technologies.build }
   end
 
   def create
@@ -25,7 +25,8 @@ class PortfoliosController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit;
+  end
 
   def update
     if @portfolio_item.update portfolio_item_params
@@ -48,7 +49,6 @@ class PortfoliosController < ApplicationController
     params[:order].each do |key, value|
       Portfolio.find(value[:id]).update(position: value[:position])
     end
-
     render nothing: true
   end
 
@@ -61,6 +61,6 @@ class PortfoliosController < ApplicationController
   def portfolio_item_params
     params.require(:portfolio).permit(:title, :subtitle, :body,
                                       :main_image, :thumb_image,
-                                      technologies_attributes: [:name, :id, :_destroy])
+                                      technologies_attributes: [:id, :name, :_destroy])
   end
 end

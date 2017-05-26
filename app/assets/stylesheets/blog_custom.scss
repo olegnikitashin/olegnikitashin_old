@@ -10,3 +10,13 @@
     font-size: 1.5rem;
   }
 }
+
+.blog-title {
+  margin-bottom: 10px;
+  a {
+    color: #333;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+}

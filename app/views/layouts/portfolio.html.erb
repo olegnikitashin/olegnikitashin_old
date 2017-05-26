@@ -11,6 +11,8 @@
 </head>
 
 <body>
+  <%= custom_bootstrap_flash %>
+
   <%= render 'shared/portfolio_nav' %>
 
   <%= render 'shared/portfolio_header' unless %w(new edit).include?(params[:action]) %>
