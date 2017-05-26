@@ -71,4 +71,13 @@ module ApplicationHelper
     end
     flash_messages.join("\n").html_safe
   end
+
+  def errors_to_flash(object)
+    flash_messages = []
+    object.errors.full_messages.each do |error|
+      text = "<script>toastr.error(\"#{error}\");</script>"
+      flash_messages << text.html_safe if error
+    end
+    flash_messages.join("\n").html_safe
+  end
 end

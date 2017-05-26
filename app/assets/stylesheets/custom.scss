@@ -20,11 +20,16 @@
 
 .app-nav {
   span {
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
   .nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
     color: #FFF;
+  }
+  .nav-link:nth-of-type(1) {
+    margin-right: 0;
   }
 }
 
