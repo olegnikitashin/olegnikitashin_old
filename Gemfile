@@ -61,3 +61,7 @@ gem 'petergate'
 gem "font-awesome-rails"
 gem 'kaminari'
 gem 'jquery-ui-rails'
+gem 'carrierwave'
+gem "mini_magick"
+
+gem 'dotenv-rails', groups: [:development, :test]

@@ -1,9 +1,12 @@
-<%= simple_form_for(@portfolio_item, html: { class: 'form-horizontal' }) do |f| %>
+<%= simple_form_for(@portfolio_item, html: { multipart: true, class: 'form-horizontal' }) do |f| %>
     <div class="row">
       <div class="col-md-6">
         <h3>Portfolio Content:</h3>
         <%= f.input :title %>
         <%= f.input :subtitle %>
+        <%= f.input :thumb_image, as: :file, label: false %>
+        <%= f.input :main_image, as: :file, label: false %>
+
         <%= f.input :body, as: :text, input_html: { rows: 10 } %>
       </div>
       <div class="col-md-6">

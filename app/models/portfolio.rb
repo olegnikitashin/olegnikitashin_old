@@ -7,6 +7,8 @@ class Portfolio < ApplicationRecord
 
   validates_presence_of :title, :body
   after_initialize :set_defaults
+  mount_uploader :thumb_image, PortfolioUploader
+  mount_uploader :main_image, PortfolioUploader
 
   scope :ruby_on_rails, -> { where(subtitle: 'Ruby On Rails') }
   scope :vue, -> { where(subtitle: 'VueJS') }
