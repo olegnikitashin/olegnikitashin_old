@@ -18,9 +18,14 @@
   }
 }
 
-.app-nav span {
-  margin-left: 12px;
-  margin-right: 12px;
+.app-nav {
+  span {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  .nav-link {
+    color: #FFF;
+  }
 }
 
 #background {
@@ -40,4 +45,12 @@
 
 .app-footer {
   color: #FFF;
+}
+
+.login {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  .checkbox input {
+    margin-right: 5px;
+  }
 }

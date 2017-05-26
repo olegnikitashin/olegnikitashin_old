@@ -16,10 +16,12 @@
         <h3>Technologies Used:</h3>
         <div class="technologies">
           <%= f.simple_fields_for :technologies do |t| %>
-              <div>
-                <%= t.input :name %>
-              </div>
+            <%= render 'technology_fields', f: t %>
           <% end %>
+
+          <div class="links">
+              <%= link_to_add_association 'add technology', f, :technologies %>
+            </div>
         </div>
       </div>
       <div class="col-md-12">

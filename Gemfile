@@ -63,5 +63,7 @@ gem 'kaminari'
 gem 'jquery-ui-rails'
 gem 'carrierwave'
 gem "mini_magick"
+gem "cocoon"
+gem 'toastr-rails'
 
 gem 'dotenv-rails', groups: [:development, :test]
