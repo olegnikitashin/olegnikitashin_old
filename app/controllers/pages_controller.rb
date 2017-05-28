@@ -5,9 +5,11 @@ class PagesController < ApplicationController
     @portfolios = Portfolio.all
   end
 
-  def about
-  end
+  def about; end
 
-  def contact
+  def contact; end
+
+  def tech_news
+    @tweets = SocialTool.twitter_search
   end
 end
