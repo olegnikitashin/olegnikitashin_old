@@ -66,4 +66,6 @@ gem "mini_magick"
 gem "cocoon"
 gem 'toastr-rails'
 
+gem 'twitter'
+
 gem 'dotenv-rails', groups: [:development, :test]
