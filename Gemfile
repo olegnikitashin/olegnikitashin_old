@@ -67,5 +67,6 @@ gem "cocoon"
 gem 'toastr-rails'
 
 gem 'twitter'
+gem 'redis'
 
 gem 'dotenv-rails', groups: [:development, :test]
