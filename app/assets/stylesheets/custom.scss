@@ -59,3 +59,15 @@
     margin-right: 5px;
   }
 }
+
+.tech-news {
+  color: #000;
+  margin: 20px;
+  text-shadow: none;
+  a {
+    color: green;
+  }
+  > .card {
+    padding: 20px;
+  }
+}
