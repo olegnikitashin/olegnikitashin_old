@@ -71,3 +71,29 @@
     padding: 20px;
   }
 }
+
+.app-card-container {
+  color: #333;
+  text-shadow: none;
+  text-align: left;
+  > .card {
+    padding: 40px
+  }
+  a {
+    color: #333;
+  }
+}
+
+.profile-img {
+  border: 1px solid rgba(51, 51, 51, 0.38);
+}
+
+.card-block {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.skill {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

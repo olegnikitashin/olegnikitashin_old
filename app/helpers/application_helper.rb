@@ -13,10 +13,12 @@ module ApplicationHelper
     content_tag(:div, "Hi! I'm a paragraph tag!", class: 'my-special')
   end
 
-  def source_helper(layout_name = '')
+  def source_helper(klass)
     if session[:source]
-      greeting = "Thanks for visiting me from #{session[:source]} and you're on the #{layout_name} page!"
-      content_tag(:p, greeting, class: 'source-greeting')
+      greeting = "Thanks for visiting me from #{session[:source]},please feel free to
+                  #{ link_to 'contact me', contact_path}
+                  if you'd like to work together!"
+      content_tag(:div, greeting.html_safe, class: klass)
     end
   end
 
@@ -69,7 +71,7 @@ module ApplicationHelper
     flash_messages = []
     flash.each do |type, message|
       type = 'success' if type == 'notice'
-      type = 'error'   if type == 'alert'
+      type = 'error' if type == 'alert'
       text = "<script>toastr.#{type}('#{message}');</script>"
       flash_messages << text.html_safe if message
     end

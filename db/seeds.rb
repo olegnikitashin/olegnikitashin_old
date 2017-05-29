@@ -1,3 +1,17 @@
+User.create!(email: "admin@example.com", password: "12345678",
+             password_confirmation: "12345678",
+             name: "Admin User",
+             roles: "site_admin")
+
+puts "1 Admin user created"
+
+User.create!(email: "user@example.com",
+             password: "12345678",
+             password_confirmation: "12345678",
+             name: "Regular User")
+
+puts "1 regular user created"
+
 Skill.create!(title: 'Ruby on Rails', percent_utilized: 75)
 Skill.create!(title: 'Javascript', percent_utilized: 15)
 Skill.create!(title: 'HTML/CSS', percent_utilized: 10)
