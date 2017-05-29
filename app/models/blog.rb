@@ -5,6 +5,7 @@ class Blog < ApplicationRecord
   friendly_id :title, use: :slugged
 
   belongs_to :topic
+  has_many :comments, dependent: :destroy
 
   validates_presence_of :title, :body
 end
