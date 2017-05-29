@@ -8,13 +8,10 @@
     <%= @blog.body %>
   </p>
 
-  <% unless current_user.is_a? GuestUser %>
-      <%= simple_form_for(@comment, url: '#') do |f| %>
-          <%= f.input :content, as: :text %>
-          <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
-      <% end %>
-  <% end %>
+  <%= render 'comments/comment_form' %>
 
-  <%= render @blog.comments %>
+  <div id="comments" data-blog-id="<%= @blog.id %>">
+    <%= render @blog.comments %>
+  </div>
 </div>
 
