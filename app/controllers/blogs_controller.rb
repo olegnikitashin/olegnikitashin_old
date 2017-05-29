@@ -4,11 +4,15 @@ class BlogsController < ApplicationController
   access all: [:show, :index], user: { except: [:new, :create, :update, :edit, :destroy, :toggle_status] }, site_admin: :all
 
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    @blogs = if logged_in?(:site_admin)
+               Blog.recent.page(params[:page]).per(5)
+             else
+               Blog.published.recent.page(params[:page]).per(5)
+             end
   end
 
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @blog    = Blog.includes(:comments).friendly.find(params[:id])
     @comment = Comment.new
   end
 
@@ -16,7 +20,8 @@ class BlogsController < ApplicationController
     @blog = Blog.new
   end
 
-  def edit; end
+  def edit;
+  end
 
   def create
     @blog = Blog.new(blog_params)
