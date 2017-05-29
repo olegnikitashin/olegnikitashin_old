@@ -6,6 +6,8 @@
 
     <%= f.input :topic_id, collection: Topic.all, label_method: :title %>
 
+    <%= f.input :status, collection: Blog.statuses, as: :radio_buttons, value_method: :first, label: false %>
+
     <%= f.input :body, as: :text, input_html: { rows: 15, placeholder: 'Body' } %>
 
     <%= f.button :submit, class: 'btn btn-primary' %>
