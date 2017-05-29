@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta>
-      <title><%= @page_title %></title>
-      <%= csrf_meta_tags %>
-      <meta charset="utf-8">
-      <meta name="keywords" content="<%= @seo_keywords %>" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <meta>
+  <title><%= @page_title %></title>
+  <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta name="keywords" content="<%= @seo_keywords %>"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-  <div class="site-wrapper">
-    <div class="site-wrapper-inner">
-      <div class="cover-container">
+<body>
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
 
-        <div id="background"></div>
-        <%= custom_bootstrap_flash %>
+      <div id="background"></div>
+      <%= custom_bootstrap_flash %>
 
-        <%= render 'shared/application_nav' %>
-        <%= yield %>
+      <%= render 'shared/application_nav' %>
 
-        <%= source_helper('application') %>
+      <%= yield %>
 
-        <%= render 'shared/application_footer' %>
-      </div>
+      <%= render 'shared/application_footer' %>
     </div>
   </div>
-  </body>
+</div>
+</body>
 </html>
