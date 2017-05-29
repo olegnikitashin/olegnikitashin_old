@@ -68,5 +68,6 @@ gem 'toastr-rails'
 
 gem 'twitter'
 gem 'redis'
-
+gem 'redcarpet'
+gem 'coderay'
 gem 'dotenv-rails', groups: [:development, :test]
