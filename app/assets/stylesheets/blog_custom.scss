@@ -32,3 +32,13 @@
 .comment-name {
   font-weight: 700;
 }
+
+.blogcrumb {
+  font-size: 1.2em;
+  a {
+    margin: 0 5px 0 5px;
+  }
+  .draft {
+    color: darkred;
+  }
+}
